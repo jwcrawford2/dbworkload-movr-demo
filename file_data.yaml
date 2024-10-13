@@ -1,0 +1,422 @@
+file_data:
+- count: 150000000
+  sort-by: []
+  columns:
+    application:
+        type: choice
+        args:
+          population:
+            - C0
+            - C1
+            - C2
+            - C3
+            - C4
+            - C5
+            - C6
+            - C7
+            - C8
+            - C9
+          weights:
+            - 1
+            - 1
+            - 1
+            - 1
+            - 1
+            - 1
+            - 1
+            - 1
+            - 1
+            - 1
+          cum_weights:
+            # None
+          seed: 0
+          null_pct: 0
+          array: 0
+    email:
+      type: string
+      args:
+        min: 4
+        max: 10
+        prefix: ''
+        seed: 0.43574008438624445
+        null_pct: 0.0
+        array: 0
+    name:
+      type: string
+      args:
+        min: 4
+        max: 10
+        prefix: ''
+        seed: 0.27554631668669505
+        null_pct: 0.0
+        array: 0
+    formatted:
+      type: bool
+      args:
+        seed: 0.3127326319384255
+        null_pct: 0.0
+        array: 0
+    postmark:
+      type: timestamp
+      args:
+        start: '2000-01-01'
+        end: '2024-12-31'
+        format: '%Y-%m-%d %H:%M:%S.%f'
+        seed: 0.11372502305734578
+        null_pct: 0.0
+        array: 0
+    dataval00:
+      type: jsonb
+      args:
+        min: 10
+        max: 50
+        seed: 0.4240993081635889
+        null_pct: 0.0
+    dataval01:
+      type: integer
+      args:
+        min: 0
+        max: 9223372036854775807
+        seed: 0.37659933840001025
+        null_pct: 0.0
+        array: 0
+    dataval02:
+      type: float
+      args:
+        min: 0
+        max: 10000000
+        round: 2
+        seed: 0.0527039940715599
+        null_pct: 0.0
+        array: 0
+    dataval03:
+      type: string
+      args:
+        min: 6
+        max: 15
+        prefix: ''
+        seed: 0.07930566180072152
+        null_pct: 0.0
+        array: 0
+    dataval04:
+      type: string
+      args:
+        min: 4
+        max: 10
+        prefix: ''
+        seed: 0.8686433216506573
+        null_pct: 0.0
+        array: 0
+    dataval05:
+      type: string
+      args:
+        min: 2
+        max: 5
+        prefix: ''
+        seed: 0.26249929389035
+        null_pct: 0.0
+        array: 0
+    dataval06:
+      type: integer
+      args:
+        min: 0
+        max: 9223372036854775807
+        seed: 0.151487059806517
+        null_pct: 0.0
+        array: 0
+    dataval07:
+      type: string
+      args:
+        min: 7
+        max: 20
+        prefix: ''
+        seed: 0.6463792260657428
+        null_pct: 0.0
+        array: 0
+    dataval08:
+      type: jsonb
+      args:
+        min: 10
+        max: 50
+        seed: 0.7734659879909377
+        null_pct: 0.0
+    dataval09:
+      type: timestamp
+      args:
+        start: '2000-01-01'
+        end: '2024-12-31'
+        format: '%Y-%m-%d %H:%M:%S.%f'
+        seed: 0.3378236503160953
+        null_pct: 0.0
+        array: 0
+    dataval10:
+      type: string
+      args:
+        min: 4
+        max: 10
+        prefix: ''
+        seed: 0.3357044215438254
+        null_pct: 0.0
+        array: 0
+    dataval11:
+      type: string
+      args:
+        min: 6
+        max: 15
+        prefix: ''
+        seed: 0.4754774611332454
+        null_pct: 0.0
+        array: 0
+    dataval12:
+      type: string
+      args:
+        min: 2
+        max: 5
+        prefix: ''
+        seed: 0.5756071121450347
+        null_pct: 0.0
+        array: 0
+    dataval13:
+      type: float
+      args:
+        min: 0
+        max: 10000000
+        round: 2
+        seed: 0.84684398473836
+        null_pct: 0.0
+        array: 0
+    dataval14:
+      type: string
+      args:
+        min: 2
+        max: 5
+        prefix: ''
+        seed: 0.33001815216835206
+        null_pct: 0.0
+        array: 0
+    dataval15:
+      type: string
+      args:
+        min: 4
+        max: 10
+        prefix: ''
+        seed: 0.8243542253119439
+        null_pct: 0.0
+        array: 0
+    dataval16:
+      type: string
+      args:
+        min: 6
+        max: 15
+        prefix: ''
+        seed: 0.6273120491611245
+        null_pct: 0.0
+        array: 0
+    dataval17:
+      type: string
+      args:
+        min: 2
+        max: 5
+        prefix: ''
+        seed: 0.06743263183341996
+        null_pct: 0.0
+        array: 0
+    dataval18:
+      type: string
+      args:
+        min: 4
+        max: 10
+        prefix: ''
+        seed: 0.9245128682207294
+        null_pct: 0.0
+        array: 0
+    dataval19:
+      type: string
+      args:
+        min: 7
+        max: 20
+        prefix: ''
+        seed: 0.5810685055797399
+        null_pct: 0.0
+        array: 0
+    dataval20:
+      type: string
+      args:
+        min: 6
+        max: 15
+        prefix: ''
+        seed: 0.7150125324255534
+        null_pct: 0.0
+        array: 0
+    dataval21:
+      type: jsonb
+      args:
+        min: 10
+        max: 50
+        seed: 0.7718227430141006
+        null_pct: 0.0
+    dataval22:
+      type: integer
+      args:
+        min: 0
+        max: 9223372036854775807
+        seed: 0.9403749445665552
+        null_pct: 0.0
+        array: 0
+    dataval23:
+      type: float
+      args:
+        min: 0
+        max: 10000000
+        round: 2
+        seed: 0.5508669583642872
+        null_pct: 0.0
+        array: 0
+    dataval24:
+      type: bit
+      args:
+        size: 10
+        seed: 0.6215332390715982
+        null_pct: 0.0
+        array: 0
+    dataval25:
+      type: integer
+      args:
+        min: 0
+        max: 1000
+        seed: 0.30809022372004535
+        null_pct: 0.0
+        array: 5
+    dataval26:
+      type: string
+      args:
+        min: 4
+        max: 10
+        prefix: ''
+        seed: 0.15791891659243285
+        null_pct: 0.0
+        array: 0
+    dataval27:
+      type: string
+      args:
+        min: 2
+        max: 5
+        prefix: ''
+        seed: 0.5867087373553186
+        null_pct: 0.0
+        array: 0
+    dataval28:
+      type: string
+      args:
+        min: 2
+        max: 5
+        prefix: ''
+        seed: 0.7637430653326844
+        null_pct: 0.0
+        array: 0
+    dataval29:
+      type: bytes
+      args:
+        size: 20
+        seed: 0.24154009568513535
+        null_pct: 0.0
+        array: 0
+    dataval30:
+      type: string
+      args:
+        min: 2
+        max: 5
+        prefix: ''
+        seed: 0.15538100021818058
+        null_pct: 0.0
+        array: 0
+    dataval31:
+      type: string
+      args:
+        min: 6
+        max: 15
+        prefix: ''
+        seed: 0.9496903559634033
+        null_pct: 0.0
+        array: 0
+    dataval32:
+      type: string
+      args:
+        min: 2
+        max: 5
+        prefix: ''
+        seed: 0.4864919203581619
+        null_pct: 0.0
+        array: 0
+    dataval33:
+      type: string
+      args:
+        min: 4
+        max: 10
+        prefix: ''
+        seed: 0.039329845541239195
+        null_pct: 0.0
+        array: 0
+    dataval34:
+      type: string
+      args:
+        min: 2
+        max: 5
+        prefix: ''
+        seed: 0.6545651649872999
+        null_pct: 0.0
+        array: 0
+    dataval35:
+      type: string
+      args:
+        min: 2
+        max: 5
+        prefix: ''
+        seed: 0.7627157767225919
+        null_pct: 0.0
+        array: 0
+    dataval36:
+      type: string
+      args:
+        min: 2
+        max: 5
+        prefix: ''
+        seed: 0.8898428649923346
+        null_pct: 0.0
+        array: 0
+    dataval37:
+      type: string
+      args:
+        min: 2
+        max: 5
+        prefix: ''
+        seed: 0.32081432940745225
+        null_pct: 0.0
+        array: 0
+    dataval38:
+      type: string
+      args:
+        min: 2
+        max: 5
+        prefix: ''
+        seed: 0.19726457200457925
+        null_pct: 0.0
+        array: 0
+    dataval39:
+      type: date
+      args:
+        start: '2000-01-01'
+        end: '2024-12-31'
+        format: '%Y-%m-%d'
+        seed: 0.23775981306359617
+        null_pct: 0.0
+        array: 0
+    dataval40:
+      type: time
+      args:
+        start: '00:00:00'
+        end: '23:59:59'
+        micros: false
+        seed: 0.41366405792708705
+        null_pct: 0.0
+        array: 0
