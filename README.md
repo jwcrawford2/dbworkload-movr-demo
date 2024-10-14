@@ -64,10 +64,16 @@ WITH delimiter = e'\t', nullif = '';
 Copy CSV Files from Linux to Azure Storage Blob
 Create a Shared Access Signature (SAS) [be sure you're at the storage account level] in the portal and copy the SAS Token. I did not specify the IP address.  The token should look like this:
 
+```
+sv=2018-03-28&ss=bjqt&srt=sco&sp=rwddgcup&se=2019-05-01T05:01:17Z&st=2019-04-30T21:01:17Z&spr=https&sig=MGCXiyEzbtttkr3ewJIh2AR8KrghSy1DGM9ovN734bQF4%3D" --recursive=true
+```
+(Fictitious SAS Token)
+
 Now you can create the AZCopy Command by combining the HTTPS string available in the properties tab of the container and the SAS Token.
 ```
 azcopy cp "*" "https://nollenstorageaccount.blob.core.windows.net/nollen-intuit-container/csv/?sv=2022-11-02&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2024-11-01T03:14:45Z&st=2024-10-11T19:14:45Z&spr=https&sig=wRQecYEuH%2FZeyMIpi55BL6%2BgDe0CTtTi94DASC1qEyk%3D"
 ```
+(Fictitious SAS Token)
 
 - To backup the database to Azure Storage
 ```
