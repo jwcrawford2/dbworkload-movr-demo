@@ -1,16 +1,33 @@
-# Intuit Multi-Region Demo
+# Multi-Region Demo Moving Leaseholders
+
+## Description
+We have a prospect that has a multi-region setup (west, central and east), but basically only uses two of the 3 regions for reading and writing (west and east).  Their problem is that under certain circumstances, they would like to temporariliy move leaseholders to performance maintenance or test reliability.   For example, they would like to move the leaseholders out of the west region to the central region temporarility to upgrade and repave application nodes in the west.  Once the maintenance operations are complete, they want to move the leaseholders back to the west.   These operations should have zero RPO and only minimal latency increases while putting as little burden on the operations team as possible.
+
+This demo uses a database with 152 millon rows in a regional-by-row table with leaseholders split between west and east.   While an application load is running (via dbworkload), the leaseholders are moved from west to central and back to west.   
 
 ## Database
-Multi-Region Database with 3 regions: westus2, centralus, eastus2
-3 Nodes in each Region
-4 vCPU per node
-64GiB per node
+Multi-Region Database with 
+- 3 regions: westus2, centralus, eastus2
+- 3 Nodes in each Region
+- 4 vCPU per node
+- 64GiB per node
 
-intuit-mr.sql will create the database and the shema objects
+[intuit-mr.sql](ddl\intuit-mr.sql) will create the database and the shema objects
 
 ## Data
 `dbworklaod` will generate the data, however it is also available in Azure Storage.  You can choose to load some or all of the files.
 
+### Azure Storage
+#### Backups
+- [Backup](https://portal.azure.com/#view/Microsoft_Azure_Storage/ContainerMenuBlade/~/overview/storageAccountId/%2Fsubscriptions%2Feebc0b2a-9ff2-499c-9e75-1a32e8fe13b3%2FresourceGroups%2Fnollen-resource-group%2Fproviders%2FMicrosoft.Storage%2FstorageAccounts%2Fnollennohrstorage/path/nollenbackupintuitmr/etag/%220x8DCEBB9702BDD4B%22/defaultEncryptionScope/%24account-encryption-key/denyEncryptionScopeOverride~/false/defaultId//publicAccessVal/None) database backup files
+- [Backup Details](https://portal.azure.com/#view/Microsoft_Azure_Storage/BlobPropertiesBladeV2/storageAccountId/%2Fsubscriptions%2Feebc0b2a-9ff2-499c-9e75-1a32e8fe13b3%2FresourceGroups%2Fnollen-resource-group%2Fproviders%2FMicrosoft.Storage%2FstorageAccounts%2Fnollennohrstorage/path/nollenbackupintuitmr-backup-details%2FBACKUP%20DATABASE%20intuit_mr.txt/isDeleted~/false/tabToload~/3) including database size, regions, etc.
+- [Backup Commands](https://www.example.com) the backup command used to take the backup
+### CSV Files
+- [CSV Data](https://portal.azure.com/#view/Microsoft_Azure_Storage/ContainerMenuBlade/~/overview/storageAccountId/%2Fsubscriptions%2Feebc0b2a-9ff2-499c-9e75-1a32e8fe13b3%2FresourceGroups%2Fnollen-resource-group%2Fproviders%2FMicrosoft.Storage%2FstorageAccounts%2Fnollenstorageaccount/path/nollen-intuit-container/etag/%220x8DCEA419CE48F93%22/defaultEncryptionScope/%24account-encryption-key/denyEncryptionScopeOverride~/false/defaultId//publicAccessVal/None) CSV files
+- [DDL](https://portal.azure.com/#view/Microsoft_Azure_Storage/ContainerMenuBlade/~/overview/storageAccountId/%2Fsubscriptions%2Feebc0b2a-9ff2-499c-9e75-1a32e8fe13b3%2FresourceGroups%2Fnollen-resource-group%2Fproviders%2FMicrosoft.Storage%2FstorageAccounts%2Fnollenstorageaccount/path/nollen-intuit-container/etag/%220x8DCEA419CE48F93%22/defaultEncryptionScope/%24account-encryption-key/denyEncryptionScopeOverride~/false/defaultId//publicAccessVal/None) table DDL needed to load the CSV files
+- [Import Command](hhttps://portal.azure.com/#view/Microsoft_Azure_Storage/ContainerMenuBlade/~/overview/storageAccountId/%2Fsubscriptions%2Feebc0b2a-9ff2-499c-9e75-1a32e8fe13b3%2FresourceGroups%2Fnollen-resource-group%2Fproviders%2FMicrosoft.Storage%2FstorageAccounts%2Fnollenstorageaccount/path/nollen-intuit-container/etag/%220x8DCEA419CE48F93%22/defaultEncryptionScope/%24account-encryption-key/denyEncryptionScopeOverride~/false/defaultId//publicAccessVal/None) sql statement used to load the data.  
+
+### Generating and loading the data from scratch using dbworkload
 - generate the yaml file
 ```
 dbworkload util yaml -i file_data.sql
