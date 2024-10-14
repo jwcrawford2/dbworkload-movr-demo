@@ -1,9 +1,9 @@
 # Multi-Region Demo Moving Leaseholders
 
 ## Description
-We have a prospect that has a multi-region setup (west, central and east), but basically only uses two of the 3 regions for reading and writing (west and east).  Their problem is that under certain circumstances, they would like to temporariliy move leaseholders to performance maintenance or test reliability.   For example, they would like to move the leaseholders out of the west region to the central region temporarility to upgrade and repave application nodes in the west.  Once the maintenance operations are complete, they want to move the leaseholders back to the west.   These operations should have zero RPO and only minimal latency increases while putting as little burden on the operations team as possible.
+We have a prospect that has a multi-region setup (west, central and east), but basically only uses two of the 3 regions for reading and writing (west and east).  Their problem is that under certain circumstances, they would like to temporarily move leaseholders to perform maintenance or test reliability.   For example, they would like to move the leaseholders out of the west region to the central region temporarily to upgrade and repave application nodes in the west.  Once the maintenance operations are complete, they want to move the leaseholders back to the west.   These operations should have zero RPO and only minimal latency increases while putting as little burden on the operations team as possible.
 
-This demo uses a database with 152 millon rows in a regional-by-row table with leaseholders split between west and east.   While an application load is running (via dbworkload), the leaseholders are moved from west to central and back to west.   
+This demo uses a database with 152 million rows in a regional-by-row table with leaseholders split between west and east.   While an application load is running (via dbworkload), the leaseholders are moved from west to central and back to west.   
 
 ## Database
 Multi-Region Database with 
