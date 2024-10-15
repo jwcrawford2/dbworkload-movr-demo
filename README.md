@@ -1,15 +1,13 @@
-# Multi-Region Demo Moving Leaseholders
+# Multi-Region DbWorkload Demo
 
 ## Description
-We have a prospect that has a multi-region setup (west, central and east), but basically only uses two of the 3 regions for reading and writing (west and east).  Their problem is that under certain circumstances, they would like to temporarily move leaseholders to perform maintenance or test reliability.   For example, they would like to move the leaseholders out of the west region to the central region temporarily to upgrade and repave application nodes in the west.  Once the maintenance operations are complete, they want to move the leaseholders back to the west.   These operations should have zero RPO and only minimal latency increases while putting as little burden on the operations team as possible.
-
-This demo uses a database with 152 million rows in a regional-by-row table with leaseholders split between west and east.   While an application load is running (via dbworkload), the leaseholders are moved from west to central and back to west.   
+This is a demo is an adaptation of Multi-Region Demo, that utilizes cockroach workload (movr) and roachprod.  This demo is designed to utilize dbworkload to drive load from the App VM in the AWS-Terraform-CRDB-Multi-Region cluster.  This is for an AWS SH prospect that wants to see Multi-Region capabilities.
 
 ## Database
-Multi-Region Database with 
-- 3 regions: westus2, centralus, eastus2
+AWS SH Multi-Region Database with 
+- 3 regions: us-east1, us-east2, us-west2
 - 3 Nodes in each Region
-- 4 vCPU per node
+- 8 vCPU per node
 - 64GiB per node
 
 [intuit-mr.sql](ddl\intuit-mr.sql) will create the database and the shema objects
@@ -17,8 +15,8 @@ Multi-Region Database with
 ## Data
 `dbworklaod` will generate the data, however it is also available in Azure Storage.  You can choose to load some or all of the files.
 
-### Azure Storage
-#### Backups
+### Section 1
+#### Section 1.1
 - [Backup](https://portal.azure.com/#view/Microsoft_Azure_Storage/ContainerMenuBlade/~/overview/storageAccountId/%2Fsubscriptions%2Feebc0b2a-9ff2-499c-9e75-1a32e8fe13b3%2FresourceGroups%2Fnollen-resource-group%2Fproviders%2FMicrosoft.Storage%2FstorageAccounts%2Fnollennohrstorage/path/nollenbackupintuitmr/etag/%220x8DCEBB9702BDD4B%22/defaultEncryptionScope/%24account-encryption-key/denyEncryptionScopeOverride~/false/defaultId//publicAccessVal/None) database backup files
 - [Backup Details](https://portal.azure.com/#view/Microsoft_Azure_Storage/BlobPropertiesBladeV2/storageAccountId/%2Fsubscriptions%2Feebc0b2a-9ff2-499c-9e75-1a32e8fe13b3%2FresourceGroups%2Fnollen-resource-group%2Fproviders%2FMicrosoft.Storage%2FstorageAccounts%2Fnollennohrstorage/path/nollenbackupintuitmr-backup-details%2FBACKUP%20DATABASE%20intuit_mr.txt/isDeleted~/false/tabToload~/3) including database size, regions, etc.
 - [Backup Commands](https://www.example.com) the backup command used to take the backup
