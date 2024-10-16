@@ -21,14 +21,15 @@ sudo yum install gcc -y
 sudo amazon-linux-extras install python3.8
 sudo pip3.8 install -U pip
 pip3 install psycopg[binary]
-
+```
 #### Install dbworkload
 ```
 pip3 install dbworkload[postgres]
 ```
 ### Generating and loading the data from scratch using dbworkload
-- generate the yaml file
+--generate the yaml file
 ```
+--generate the yaml file
 dbworkload util yaml -i movr_db_sr.sql
 ```
 - edit the yaml file
