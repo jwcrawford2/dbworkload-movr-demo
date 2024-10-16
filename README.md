@@ -41,16 +41,19 @@ In this initial demo version, data is generated using the cockroach workload mov
 SSH Terminal to App Node VM and run command (will need to replace CRDB Connectino URI - whcih uses CRDB alias in the .bashrc file) 
 (Example USEast:
 ```
+cd workloads
 dbworkload run -w movr.py -c 4 --uri "postgresql://chipdbuser@192.168.3.124:26257/movr_demo?sslmode=verify-full&sslrootcert=$HOME/certs/ca.crt&sslcert=$HOME/certs/client.chipdbuser.crt&sslkey=$HOME/certs/client.chipdbuser.key" 
 ```
 ##
 
 Central:
 ```
+cd workloads
 dbworkload run -w movr.py -c 4 --uri "postgresql://chipdbuser@192.168.3.124:26257/movr_demo?sslmode=verify-full&sslrootcert=$HOME/certs/ca.crt&sslcert=$HOME/certs/client.chipdbuser.crt&sslkey=$HOME/certs/client.chipdbuser.key" 
 ```
 West:
 ```
+cd workloads
 dbworkload run -w file_data.py --driver postgres --uri "postgresql://ron@192.168.7.100:26257/intuit_mr?sslmode=verify-full&sslrootcert=$HOME/certs/ca.crt&sslcert=$HOME/certs/client.ron.crt&sslkey=$HOME/certs/client.ron.key" -d 300
 ```
 
