@@ -1,10 +1,10 @@
-# Multi-Region DbWorkload Demo
+# dbworkload-movr-demo
 
 ## Description
-This is a demo is an adaptation of Multi-Region Demo, that utilizes cockroach workload (movr) and roachprod.  This demo is designed to utilize dbworkload to drive load from the App VM in the AWS-Terraform-CRDB-Multi-Region cluster.  This is for an AWS SH prospect that wants to see Multi-Region capabilities.
+This is a demo is an adaptation of Cockroach MOVR applicatino demo, including J4's Multi-Region Demo crdb-movr-mr-demo (which utilizes cockroach workload (movr) on a roachprod cluster).  This demo replaces cockroach workload, and instead uses **dbworkload** to drive load.  This demo adaptation/example to a self-hosted cluster deployment on AWS using Ron Nollen's Terraform scripts.   It is designed to run on the Applications VM, which can be optioinally deployed, in both the single-region or multi-region terraform scripts (which now include the MOVR app).
 
 ## Database
-AWS SH Multi-Region Database with 
+AWS SH Single or Multi-Region Database with 
 - 3 regions: us-east1, us-east2, us-west2
 - 3 Nodes in each Region
 
@@ -15,7 +15,9 @@ In this initial demo version, data is generated using the cockroach workload mov
 
 ## Install DbWorkload on App Servers (crdb-app-0,1,2)
 Perform these steps on each of the (AWS Linux2) app VM's in your cluster
-### Python3 Setups
+### Required Python3 Setups for AWS EC2 Linux2  
+- generate the yaml file
+```
 sudo yum install gcc -y
 sudo amazon-linux-extras install python3.8
 sudo pip3.8 install -U pip
