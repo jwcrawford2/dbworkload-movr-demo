@@ -38,8 +38,7 @@ In this initial demo version, data is generated using the cockroach workload mov
 
 # Demo 
 ## Start dbworkload on App Node (Primary App Node if MR)
-SSH Terminal to App Node VM and run command (will need to replace CRDB Connectino URI - whcih uses CRDB alias in the .bashrc file) 
-(Example USEast:
+SSH Terminal to Regional App Node VM.  The following command will launch dbworkload, using the Region's CRDB connection string.
 ```
 cd workloads
 dbworkload run \
@@ -48,7 +47,7 @@ dbworkload run \
 --uri $(envsubst <<< $(type CRDB | grep cockroach-sql | awk '{print $4}' | sed 's/defaultdb/movr_demo/1')| sed "s/\"//g")
 
 ```
-##
+## If Multi-Region, start dbworkload on App Node in other Regions.
 
 Central:
 ```
