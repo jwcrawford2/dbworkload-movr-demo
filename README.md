@@ -42,19 +42,29 @@ SSH Terminal to App Node VM and run command (will need to replace CRDB Connectin
 (Example USEast:
 ```
 cd workloads
-dbworkload run -w movr.py -c 4 --uri "postgresql://chipdbuser@192.168.3.124:26257/movr_demo?sslmode=verify-full&sslrootcert=$HOME/certs/ca.crt&sslcert=$HOME/certs/client.chipdbuser.crt&sslkey=$HOME/certs/client.chipdbuser.key" 
+dbworkload run \
+-w movr.py \
+-c 4 \
+--uri $(envsubst <<< $(type CRDB | grep cockroach-sql | awk '{print $4}' | sed 's/defaultdb/movr_demo/1')| sed "s/\"//g")
+
 ```
 ##
 
 Central:
 ```
 cd workloads
-dbworkload run -w movr.py -c 4 --uri "postgresql://chipdbuser@192.168.3.124:26257/movr_demo?sslmode=verify-full&sslrootcert=$HOME/certs/ca.crt&sslcert=$HOME/certs/client.chipdbuser.crt&sslkey=$HOME/certs/client.chipdbuser.key" 
+dbworkload run \
+-w movr.py \
+-c 4 \
+--uri $(envsubst <<< $(type CRDB | grep cockroach-sql | awk '{print $4}' | sed 's/defaultdb/movr_demo/1')| sed "s/\"//g")
 ```
 West:
 ```
 cd workloads
-dbworkload run -w file_data.py --driver postgres --uri "postgresql://ron@192.168.7.100:26257/intuit_mr?sslmode=verify-full&sslrootcert=$HOME/certs/ca.crt&sslcert=$HOME/certs/client.ron.crt&sslkey=$HOME/certs/client.ron.key" -d 300
+dbworkload run \
+-w movr.py \
+-c 4 \
+--uri $(envsubst <<< $(type CRDB | grep cockroach-sql | awk '{print $4}' | sed 's/defaultdb/movr_demo/1')| sed "s/\"//g")
 ```
 
 # Show Terminals for Each Region
