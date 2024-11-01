@@ -40,7 +40,6 @@ In this initial demo version, data is generated using the cockroach workload mov
 ## Start dbworkload on App Node (Primary App Node if MR)
 SSH Terminal to Regional App Node VM.  The following command will launch dbworkload, using the Region's CRDB connection string.
 ```
-cd workloads
 dbworkload run \
 -w movr.py \
 -c 4 \
@@ -51,7 +50,6 @@ dbworkload run \
 
 Central:
 ```
-cd workloads
 dbworkload run \
 -w movr.py \
 -c 4 \
