@@ -57,7 +57,6 @@ dbworkload run \
 ```
 West:
 ```
-cd workloads
 dbworkload run \
 -w movr.py \
 -c 4 \
