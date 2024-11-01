@@ -22,16 +22,16 @@ or Multi-Region Database with
 ### Install DbWorkload on App Server (crdb-app-0,1,2, etc)
 Perform these steps on each App Node VM in your cluster.   
 
-#### Required Python3 Setups for AWS EC2 Linux2  
+#### Required Python3.8 Setups for AWS EC2 Linux2  
 ```
 sudo yum install gcc -y
 sudo amazon-linux-extras install python3.8
 sudo pip3.8 install -U pip
-pip3 install psycopg[binary]
+pip3.8 install psycopg[binary]
 ```
 #### Install dbworkload
 ```
-pip3 install dbworkload[postgres]
+pip3.8 install dbworkload[postgres]
 ```
 ## Prepare Data 
 In this initial demo version, data is generated using the cockroach workload movr utility.
